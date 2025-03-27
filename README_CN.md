@@ -6,9 +6,9 @@
 
 <h1 align="center">NextChat</h1>
 
-一键免费部署你的私人 ChatGPT 网页应用，支持 GPT3, GPT4 & Gemini Pro 模型。
+一键免费部署你的私人 ChatGPT 网页应用，支持 Claude, GPT4 & Gemini Pro 模型。
 
-[NextChatAI](https://nextchat.dev/chat?utm_source=readme) / [企业版](#%E4%BC%81%E4%B8%9A%E7%89%88) / [演示 Demo](https://chat-gpt-next-web.vercel.app/) / [反馈 Issues](https://github.com/Yidadaa/ChatGPT-Next-Web/issues) / [加入 Discord](https://discord.gg/zrhvHCr79N)
+[NextChatAI](https://nextchat.club?utm_source=readme) / [企业版](#%E4%BC%81%E4%B8%9A%E7%89%88) / [演示 Demo](https://chat-gpt-next-web.vercel.app/) / [反馈 Issues](https://github.com/Yidadaa/ChatGPT-Next-Web/issues) / [加入 Discord](https://discord.gg/zrhvHCr79N)
 
 [<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FChatGPTNextWeb%2FChatGPT-Next-Web&env=OPENAI_API_KEY&env=CODE&project-name=nextchat&repository-name=NextChat) [<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/ZBUEFA)  [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/#https://github.com/Yidadaa/ChatGPT-Next-Web)
 
@@ -27,7 +27,8 @@
 
 企业版咨询: **business@nextchat.dev**
 
-<img width="300" src="https://github.com/user-attachments/assets/3daeb7b6-ab63-4542-9141-2e4a12c80601">
+<img width="300" src="https://github.com/user-attachments/assets/bb29a11d-ff75-48a8-b1f8-d2d7238cf987">
+
 
 ## 开始使用
 
@@ -88,7 +89,7 @@ code1,code2,code3
 
 ### `OPENAI_API_KEY` （必填项）
 
-OpanAI 密钥，你在 openai 账户页面申请的 api key，使用英文逗号隔开多个 key，这样可以随机轮询这些 key。
+OpenAI 密钥，你在 openai 账户页面申请的 api key，使用英文逗号隔开多个 key，这样可以随机轮询这些 key。
 
 ### `CODE` （可选）
 
@@ -262,6 +263,17 @@ Stability API密钥
 
 自定义的Stability API请求地址
 
+### `ENABLE_MCP` (optional)
+
+启用MCP（Model Context Protocol）功能
+
+### `SILICONFLOW_API_KEY` (optional)
+
+SiliconFlow API Key.
+
+### `SILICONFLOW_URL` (optional)
+
+SiliconFlow API URL.
 
 ## 开发
 
@@ -312,6 +324,16 @@ docker run -d -p 3000:3000 \
    -e CODE=页面访问密码 \
    --net=host \
    -e PROXY_URL=http://127.0.0.1:7890 \
+   yidadaa/chatgpt-next-web
+```
+
+如需启用 MCP 功能，可以使用：
+
+```shell
+docker run -d -p 3000:3000 \
+   -e OPENAI_API_KEY=sk-xxxx \
+   -e CODE=页面访问密码 \
+   -e ENABLE_MCP=true \
    yidadaa/chatgpt-next-web
 ```
 
